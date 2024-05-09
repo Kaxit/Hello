@@ -1,0 +1,155 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        h1{
+            border: 2px solid black;
+        }
+        hr{
+            height: 1px;
+            color: red;
+            background-color: red;
+            border: none;
+        }
+        .mybox{
+          border: 2px solid black;
+          background-color: rgb(196, 255, 192);
+          color: blue;
+        }
+
+          
+        .collapse.show {
+            display: block;
+        }
+
+        body {
+          /* Light mode styles */
+          
+          color: black;
+          font-family: Arial, sans-serif;
+          transition: background-color 0.3s, color 0.3s;
+      }
+      
+      .dark-mode {
+          /* Dark mode styles */
+          background-color: #333;
+          color: white;
+      }
+
+      .hover-neon:hover{
+        
+        box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+        /* transition-delay: 0.6s; */
+        /* background-color: #ae00ff; */
+      }
+
+   
+    </style>
+
+    <title>  {% block title %}{% endblock title %} </title>
+  </head>
+  <body>
+    
+    
+    {% comment %} navbar-expand-sm {% endcomment %}
+
+<nav id="navbar" class="navbar navbar-collapse navbar-expand-sm navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Kaxit</a>
+  
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Ind AS</a>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          IND AS 1-49
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Ind_AS_1</a>
+          <a class="dropdown-item" href="/Ind_AS_2">Ind_AS_2</a>
+          <a class="dropdown-item" href="/Ind_AS_7">Ind_AS_7</a>
+          <a class="dropdown-item" href="/Ind_AS_19">Ind_AS_19</a>
+          <a class="dropdown-item" href="/Ind_AS_41">Ind_AS_41</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown hover-neon">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          IND AS 101-
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/Ind_AS_101">Ind_AS_101</a>
+          <a class="dropdown-item" href="/Ind_AS_102">Ind_AS_102</a>
+          <a class="dropdown-item" href="/Ind_AS_113">Ind_AS_113</a>
+          <a class="dropdown-item" href="/Ind_AS_115">Ind_AS_115</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+        
+      
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            INCOME TAX
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/it_basic">Basic</a>
+            <a class="dropdown-item" href="/Ind_AS_7">Ind_AS_7</a>
+            <a class="dropdown-item" href="/Ind_AS_19">Ind_AS_19</a>
+            <a class="dropdown-item" href="/Ind_AS_41">Ind_AS_41</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Something else here</a>
+          </div>
+        </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link" href="/skreachpad" target="_blank" tabindex="-2" aria-disabled="true">Sketchpad</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/calc" target="_blank" tabindex="-2" aria-disabled="true">Calculator</a>
+      </li>
+
+      <li class="nav-item">
+        <a id="modeToggle" tabindex="-1" ><img src="{% static 'bulb.jpg' %}" alt="Mode" width="40" height="30"></a>
+      </li>
+      
+      <script>
+        const modeToggleBtn = document.getElementById('modeToggle');
+  const body = document.body;
+  
+  modeToggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+  });
+      </script>
+    </ul>
+
+  </div>
+</nav>
+
+  
+
+    {% block body %}{% endblock body %}
+    
+      <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

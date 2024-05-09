@@ -1,0 +1,424 @@
+{% extends "base.html" %}
+
+{% block title %} Ind_AS_115 {% endblock title %}
+
+{% load static %}
+
+{% block body %}
+
+
+<h1>115: REVENUE FROM CONTRACTS WITH CUSTOMERS: <a href="{% static 'INDAS115 icai-unlocked.pdf' %}"
+    target="_blank">ICAI</a><a href="{% static 'INDAS115 mca.pdf' %}" target="_blank"> MCA</a></h1>
+
+
+<div class="scope">
+  <div class="pos-f-t">
+    <nav class="navbar navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent2"
+        aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+
+          <img src="{% static 'scope.png' %}" alt="Scope" width="30" height="30"></span> Scope (Less:
+        27,28,104,109,110,111,116,non-monetary exchange) & Split
+      </button>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent2">
+      <div class="bg-dark p-4">
+        <h5 class="text-white h4"> Scope</h5>
+        <span class="text-white">
+          Ind AS 115 applies to all contracts with customers to provide goods or services that are outputs
+          of the entity’s ordinary course of business in exchange for consideration, unless specifically
+          excluded from the scope of the new guidance, as described below. <br>
+          An entity shall apply this Standard to all contracts with customers, except the following: <br>
+          <ol type="a">
+            <li>lease contracts within the scope of Ind AS 116, Leases;</li>
+            <li>insurance contracts within the scope of Ind AS 104, Insurance Contracts</li>
+            <li>financial instruments and other contractual rights or obligations within the scope of
+              Ind AS 109, Financial Instruments, Ind AS 110, Consolidated Financial Statements,
+              Ind AS 111, Joint Arrangements, Ind AS 27, Separate Financial Statements and Ind AS 28,
+              Investments in Associates and Joint Ventures; and</li>
+            <li>non-monetary exchanges between entities in the same line of business to facilitate sales to
+              customers or potential customers. For example, this Standard would not apply to a
+              contract between two oil companies that agree to an exchange of oil to fulfil demand from
+              their customers in different specified locations on a timely basis. <br>
+              This standard is applicable only if the counterparty to the contract is a customer. A
+              customer is a party that has contracted with an entity to obtain goods or services that are
+              an output of the entity’s ordinary activities in exchange for a consideration. <br>
+              A counterparty to the contract would not be a customer if, for example, the counterparty
+              has contracted with the entity to participate in an activity or process in which the parties to
+              the contract share in the risks and benefits that result from the activity or process (such as developing
+              an asset in a collaboration arrangement) rather than to obtain the output of the
+              entity’s ordinary activities.
+            </li>
+          </ol>
+          A contract with a customer may be partially within the scope of Ind AS 115 and partially within
+          the scope of other Ind AS. In such cases, the following steps should be followed to identify how
+          it should be split between Ind AS 115 and other Ind AS:
+          <ol type="i">
+            <li>If the other Ind AS specifies how to separate and/or measure a portion of the contract, then
+              that guidance should be applied first. The amounts measured under other Ind AS should
+              be excluded from the transaction price that is allocated to performance obligations under
+              Ind AS 115.</li>
+            <li>
+              If the other Ind AS does not stipulate how to separate and/or measure a portion of the
+              contract, then Ind AS 115 would be used to separate and/or measure that portion of the
+              contract (refer discussion relating to Step 4 - Allocation of transaction price to performance
+              obligation).
+            </li>
+          </ol>
+          Ind AS 115 also specifies the accounting for the incremental costs of obtaining a contract with a
+          customer and for the costs incurred to fulfil a contract with a customer if those costs are not
+          within the scope of another Standard (see section related to Contract Costs). An entity shall
+          apply those paragraphs only to the costs incurred that relate to a contract with a customer (or
+          part of that contract) that is within the scope of this Standard.
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<div class="definition">
+  <div class="pos-f-t">
+    <nav class="navbar navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent0"
+        aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon">
+          <img src="{% static 'defi2.jpg' %}" alt="Defi Logo" width="30" height="30">
+        </span> Definition
+      </button>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent0">
+      <div class="bg-dark p-4">
+
+
+        <h5 class="text-black bg-light h4 mt-4">Contract</h5>
+        <span class="text-white">
+          An agreement between two or more parties that creates enforceable rights and obligations.
+        </span>
+
+        <h5 class="text-black bg-light h4 mt-4">Contract asset</h5>
+        <span class="text-white">
+          An entity’s right to consideration in exchange for goods or services that the
+          entity has transferred to a <b>customer</b> when that right is conditioned on
+          something other than the passage of time (for example, the entity’s future
+          performance).
+        </span>
+
+        <h5 class="text-black bg-light h4 mt-4">Contract liability</h5>
+        <span class="text-white">
+          An entity’s obligation to transfer goods or services to a <b>customer</b> for which
+          the entity has received consideration (or the amount is due) from the
+          customer.
+        </span>
+
+        <h5 class="text-black bg-light h4 mt-4">Customer</h5>
+        <span class="text-white">
+          A party that has contracted with an entity to obtain goods or services that
+          are an output of the entity’s ordinary activities in exchange for a
+          consideration.
+        </span>
+
+        <h5 class="text-black bg-light h4 mt-4">Income</h5>
+        <span class="text-white">
+          Increases in economic benefits during the accounting period in the form of
+          inflows or enhancements of assets or decreases of liabilities that result in an increase in equity, other than
+          those relating to contributions from equity
+          participants.
+        </span>
+
+        <h5 class="text-black bg-light h4 mt-4">Performance obligation</h5>
+        <span class="text-white">
+          A promise in a <b>contract</b> with a <b>customer</b> to transfer to the customer either:
+          (a) a goods or service (or a bundle of goods or services) that is distinct; or
+          (b) a series of distinct goods or services that are substantially the same
+          and that have the same pattern of transfer to the customer.
+        </span>
+
+        <h5 class="text-black bg-light h4 mt-4">Revenue</h5>
+        <span class="text-white">
+          <b>Income</b> arising in the course of an entity’s ordinary activities.
+        </span>
+
+        <h5 class="text-black bg-light h4 mt-4">Stand-alone selling price (of goods or service)</h5>
+        <span class="text-white">
+          The price at which an entity would sell a promised goods or service separately to a <b>customer</b>.
+        </span>
+
+        <h5 class="text-black bg-light h4 mt-4">Transaction price (for a contract with a customer)</h5>
+        <span class="text-white">
+          The amount of consideration to which an entity expects to be entitled in exchange for transferring promised
+          goods or services to a customer, excluding amounts collected on behalf of third parties.
+        </span>
+
+        <h5 class="text-black bg-light h4 mt-4">term</h5>
+        <span class="text-white">
+          define
+        </span>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.key === "o") {
+      // Call your toggleOverview function here
+      toggleOverview();
+    }
+  });
+
+  function toggleOverview() {
+    // Your logic to toggle the overview
+    const overviewContent = document.getElementById("navbarToggleExternalContent_overview");
+    overviewContent.classList.toggle("show");
+  }
+</script>
+
+
+<div class="overview">
+  <div class="pos-f-t">
+    <nav class="navbar navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarToggleExternalContent_overview" aria-controls="navbarToggleExternalContent"
+        aria-expanded="false" aria-label="Toggle navigation" accesskey="o">
+        <!-- onclick="toggleOverview()" -->
+        <span class="navbar-toggler-icon">
+
+          <img src="{% static 'overview1.jpg' %}" alt="overview" width="30" height="30"></span> <u>O</u>verview (Alt +
+        O)
+      </button>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent_overview">
+      <div class="bg-dark p-4">
+        <h5 class="text-white h4"> Overview</h5>
+        <span class="text-white">
+          <del>After more than a decade of work, the International Accounting Standards Board (IASB) and
+            Financial Accounting Standards Board (FASB) had published their largely converged standards
+            on revenue recognition in May, 2014. The IASB issued IFRS 15 Revenue from Contracts with
+            Customers and FASB issued ASU 2014-09 with the same name.</del> <br>
+          <s>In convergence with IFRS, the Ministry of Corporate Affairs (MCA) issued Ind AS 115, Revenue
+            from Contracts with Customers vide its notification dated 28th March, 2018.</s> <br>
+          <s>Ind AS 115 supersedes and replaces Ind AS 11 and Ind AS 18.</s> <br>
+          Ind AS 115 is based on a core principle that requires an entity to recognize revenue: <br>
+          (a) In a manner that depicts (દર્શાવે છે) the transfer of goods or services to customers <br>
+          (b) At an amount that reflects the consideration the entity expects to be entitled to in exchange
+          for those goods or services.
+          <hr>
+          <b>To achieve the core principle, an entity should apply the following five-step model:</b> <br>
+          Step 1: Identify the contract with the customer. <br>
+          Step 2: Identify the performance obligations in the contract. <br>
+          Step 3: Determine the transaction price. <br>
+          Step 4: Allocate the transaction price to the performance obligations in the contract. <br>
+          Step 5: Recognize revenue when (or as) the entity satisfies its performance obligations.
+        </span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.key === "t") {
+      // Call your toggleOverview function here
+      toggleOverview();
+    }
+  });
+
+  function toggleOverview() {
+    // Your logic to toggle the overview
+    const overviewContent = document.getElementById("navbarToggleExternalContent_transition");
+    overviewContent.classList.toggle("show");
+  }
+</script>
+
+
+<div class="TRANSITION">
+  <div class="pos-f-t">
+    <nav class="navbar navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarToggleExternalContent_transition" aria-controls="navbarToggleExternalContent"
+        aria-expanded="false" aria-label="Toggle navigation" accesskey="t">
+        <!-- onclick="toggleOverview()" -->
+        <span class="navbar-toggler-icon">
+
+          <img src="{% static 'transitions1.png' %}" alt="transition" width="30" height="30"></span> <u>T</u>ransition
+        (Alt + t)
+      </button>
+    </nav>
+    <div class="collapse" id="navbarToggleExternalContent_transition">
+      <div class="bg-dark p-4">
+        <h5 class="text-white h4"> Transition</h5>
+        <span class="text-white">
+          effective : 01/04/2018 <br>
+          apply the new revenue standard --> either of the following two approaches: <br>
+          (a) Full retrospective approach: apply retrospectively to each prior period presented in
+          accordance with Ind AS 8, subject to some practical expedients mentioned in the standard <br>
+          or <br>
+          (b) Modified retrospective approach: apply retrospectively with the cumulative effect of initial
+          application recognized at the date of initial application <br><br>
+          When applying the full retrospective method, an entity shall restate all prior periods presented in
+          accordance with Ind AS 8. This results in comparative statements in which all periods are
+          presented as if Ind AS 115 had been in effect since the beginning of the earliest period
+          presented. <br>
+          When applying modified retrospective approach, an entity does not restate prior periods
+          presented and the cumulative effect of initial application is recognized in the opening retained
+          earnings of the first year of application of Ind AS 115.
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener("keydown", function (event) {
+    if (event.ctrlKey && event.key === "1") {
+      // Call your toggleOverview function here
+      toggleOverview();
+    }
+  });
+
+  function toggleOverview() {
+    // Your logic to toggle the overview
+    const overviewContent = document.getElementById("navbarToggleExternalContent_step1");
+    overviewContent.classList.toggle("show");
+  }
+</script>
+
+
+<div class="step_1">
+  <div class="pos-f-t">
+    <nav class="navbar navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarToggleExternalContent_step1" aria-controls="navbarToggleExternalContent"
+        aria-expanded="false" aria-label="Toggle navigation" accesskey= "1">
+        <!-- onclick="toggleOverview()" -->
+        <span class="navbar-toggler-icon"></span> 5 Step Models (Ctrl + 1)
+      </button>
+    </nav>
+
+    <div class="collapse" id="navbarToggleExternalContent_step1">
+      <div class="bg-dark p-4">
+        
+        <span class="text-white">
+          {% comment %}5 step Model start: {% endcomment %}
+          
+          <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+          <!-- <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script> -->
+          <section class="text-gray-600 body-font">
+            <div class="container px-5 py-24 mx-auto">
+              <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+                <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  </svg>
+                </div>
+                <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                  <h2 class="text-gray-900 text-lg title-font font-medium mb-2">Shooting Stars</h2>
+                  <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                  <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <div class="flex items-center lg:w-3/5 mx-auto border-b pb-10 mb-10 border-gray-200 sm:flex-row flex-col">
+                <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                  <h2 class="text-gray-900 text-lg title-font font-medium mb-2">The Catalyzer</h2>
+                  <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                  <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+                <div class="sm:w-32 sm:order-none order-first sm:h-32 h-20 w-20 sm:ml-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+                    <circle cx="6" cy="6" r="3"></circle>
+                    <circle cx="6" cy="18" r="3"></circle>
+                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                  </svg>
+                </div>
+              </div>
+              <div class="flex items-center lg:w-3/5 mx-auto sm:flex-row flex-col">
+                <div class="sm:w-32 sm:h-32 h-20 w-20 sm:mr-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 flex-shrink-0">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="sm:w-16 sm:h-16 w-10 h-10" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+                    <circle cx="12" cy="7" r="4"></circle>
+                  </svg>
+                </div>
+                <div class="flex-grow sm:text-left text-center mt-6 sm:mt-0">
+                  <h2 class="text-gray-900 text-lg title-font font-medium mb-2">The 400 Blows</h2>
+                  <p class="leading-relaxed text-base">Blue bottle crucifix vinyl post-ironic four dollar toast vegan taxidermy. Gastropub indxgo juice poutine.</p>
+                  <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                    <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                      <path d="M5 12h14M12 5l7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+              <button class="flex mx-auto mt-20 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Button</button>
+            </div>
+          </section>
+          
+          
+
+
+          {% comment %} 5 Step Model ends: {% endcomment %}
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+    
+
+
+
+
+
+
+    {% comment %} {% block content %}{% include 'block_shortcut.html' %}
+    {% block shortcut %}u{% endblock shortcut %}{% endblock content %} {% endcomment %}
+
+    {% comment %} {% block content %}
+    {% include 'block_shortcut.html' %}
+    <!-- Your custom content here -->
+{% endblock content %} {% endcomment %}
+
+
+{% comment %} {% extends "block_shortcut.html" %} {% endcomment %}
+{% comment %} {% block shortcut %}i{% endblock shortcut %} <!-- Define the shortcut here -->
+{% block Details %}This is Detail of 115{% endblock Details %}
+{% block content %}
+    {% include 'block_shortcut.html' %}
+{% endblock content %} {% endcomment %}
+
+
+
+{% comment %} 
+    {% block content %}
+    <!-- Your custom content here -->
+    {% endblock %}
+
+
+    {% block toggle_id %}step_1{% endblock toggle_id %}
+
+    {% block Details %}This is Detail{% endblock Details %}
+
+ {% endcomment %}
+
+
+ {% endblock body %}
+
+
+
+
+            

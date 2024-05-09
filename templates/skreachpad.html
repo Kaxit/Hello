@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+
+{% block title %}Sketchpad{% endblock title %}
+
+
+<style>
+    #sketchpad {
+    border: 1px solid #000;
+    background-color: #fff;
+}
+</style>
+
+
+
+{% block body %}
+    <button id="rectangleButton">Rectangle</button>
+    <button id="circleButton">Circle</button>
+    <button id="triangleButton">Triangle</button>
+    <input type="color" id="colorPicker">
+    <input type="range" id="brushSize" min="1" max="20" value="5">
+    <button id="saveButton">Save</button>
+    <button id="clearButton">Clear All</button>
+    <canvas id="sketchpad"></canvas>
+    
+
+    <form>
+        <div>
+            <label for="pencil">Pencil</label>
+            <input id="pencil" type="radio" name="tool" value="pencil" checked>
+        </div>
+        <div>
+            <label for="eraser">Eraser</label>
+            <input id="eraser" type="radio" name="tool" value="eraser">
+        </div>
+    </form>
+    <div id="sketch">
+        <canvas id="paint"></canvas>
+    </div>
+
+    <script src="script.js"></script>
+
+<script>
+    const canvas = document.getElementById('sketchpad');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas size
+    canvas.width = 1000; // Adjust as needed
+    canvas.height = 600; // Adjust as needed
+
+    let isDrawing = false;
+
+    function startDrawing(e) {
+        isDrawing = true;
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    }
+
+    function draw(e) {
+        if (!isDrawing) return;
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.stroke();
+    }
+
+    function stopDrawing() {
+        isDrawing = false;
+        ctx.closePath();
+    }
+
+    canvas.addEventListener('mousedown', startDrawing);
+    canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mouseup', stopDrawing);
+    canvas.addEventListener('mouseout', stopDrawing);
+
+    const colorPicker = document.getElementById('colorPicker');
+    colorPicker.addEventListener('input', (e) => {
+        ctx.strokeStyle = e.target.value;
+    });
+
+
+    let isErasing = false;
+
+    function toggleEraser() {
+        isErasing = !isErasing;
+        ctx.globalCompositeOperation = isErasing ? 'destination-out' : 'source-over';
+    }
+
+    // Add an event listener to your eraser toggle button or checkbox
+    // Example: document.getElementById('eraserToggle').addEventListener('click', toggleEraser);
+
+    // Determine Tool
+    var tool = 'pencil';
+    document.querySelector('#pencil').onchange = function() {
+        if (this.checked) tool = 'pencil';
+        // Show Tmp Canvas
+        tmp_canvas.style.display = 'block';
+    };
+
+    document.querySelector('#eraser').onchange = function() {
+        if (this.checked) tool = 'eraser';
+        // Hide Tmp Canvas
+        tmp_canvas.style.display = 'none';
+    };
+
+    
+
+
+    const brushSize = document.getElementById('brushSize');
+    brushSize.addEventListener('input', (e) => {
+        ctx.lineWidth = e.target.value;
+    });
+
+    const saveButton = document.getElementById('saveButton');
+    saveButton.addEventListener('click', () => {
+        const image = canvas.toDataURL('image/png');
+        const link = document.createElement('a');
+        link.href = image;
+        link.download = 'my_sketch.png';
+        link.click();
+    });
+
+    const clearButton = document.getElementById('clearButton');
+
+    // Function to clear the canvas
+    function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+
+    // Attach the clearCanvas function to the button click
+    clearButton.addEventListener('click', clearCanvas);
+
+
+
+</script>
+
+{% endblock body %}

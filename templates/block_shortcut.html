@@ -1,0 +1,49 @@
+{% comment %} {% kwacro shortcut %}  {% block shortcut %}t{% shortcut %}{% endkwacro %} {% endcomment %}
+
+<!-- new content starts here -->
+      {% comment %} <script>
+        document.addEventListener("keydown", function (event) {
+          if (event.ctrlKey && event.key === {% block shortcut %}{% endblock shortcut %}) {
+            // Call your toggleOverview function here
+            toggleOverview();
+          }
+        });
+
+        function toggleOverview() {
+          // Your logic to toggle the overview
+          const overviewContent = document.getElementById({% block toggle_id %}{% endblock toggle_id %});
+          overviewContent.classList.toggle("show");
+        }
+      </script> 
+      shortcut = 
+toggle_id = 
+Detail = 
+
+      {% endcomment %}
+
+{% block content %}
+<div class="heading">
+        <div class="pos-f-t">
+          <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+              data-target="#toggle1" aria-controls="navbarToggleExternalContent"
+              aria-expanded="false" aria-label="Toggle navigation" accesskey= {% block shortcut %}u{% endblock shortcut %}>
+              <!-- onclick="toggleOverview()" -->
+              <span class="navbar-toggler-icon"></span>Disclosures (Alt + u)
+            </button>
+          </nav>
+          
+          <div class="collapse" id="{% block toggle_id %}toggle1{% endblock toggle_id %}">
+            <div class="bg-dark p-4">
+              <h5 class="text-white h4"> heading</h5>
+              <span class="text-white">
+                {% block Details %}{% endblock Details %}
+
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!-- new content ends here -->
+
+{% endblock content %}

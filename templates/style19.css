@@ -1,0 +1,14 @@
+body{
+    background-color: azure;
+}
+
+h1{
+    background-color: antiquewhite;
+}
+p{
+    font-size: large;
+}
+li{
+    font-size: large;
+    padding: 2px;
+}

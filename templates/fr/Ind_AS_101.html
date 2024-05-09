@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block body %}
+    <style>
+
+        body{
+            background-color: bisque;
+        }
+        {% comment %} nav{
+            display: flex;
+            background-color: white;
+            height: 80px;
+            padding: 0px 10px;
+        }
+        nav ul{
+            display: flex;
+            background-color: rgb(234, 207, 262);
+            align-items: center;
+            width: 1497px;
+        }
+        nav ul li{
+            display: flex;
+            align-items: center;
+            list-style-type: none;
+            font-family: 'Times New Roman', Times, serif;
+            padding: 0px 0px;
+        } {% endcomment %}
+        {% comment %} .logo{
+            display: flex;
+            height: 70px;
+            margin-right: 10px;
+        } {% endcomment %}
+        {% comment %} ul li{
+            display: flex;
+            /* color: white; */
+            align-items: center;
+            /* font-weight: bolder; */
+            list-style-type: none;
+            font-size: 15px;
+            font-family: 'Times New Roman', Times, serif;
+            padding-left: 0px;
+        }
+        ul li:hover{
+            /* background-color: rgb(169, 120, 215); */
+            text-decoration: underline;
+        }
+        ol li{
+            list-style-type: lower-alpha;
+        } {% endcomment %}
+        {% comment %} #objective{
+            font-size: large;
+            padding: 10px;
+        }
+
+        #objective:hover{
+            background-color: white;
+        }
+        #scope:hover{
+            background-color: white;
+        }
+        hr {
+            display: block;
+            unicode-bidi: isolate;
+            margin-block-start: 0.5em;
+            margin-block-end: 0.5em;
+            margin-inline-start: auto;
+            margin-inline-end: auto;
+            overflow: hidden;
+            border-style: inset;
+            border-width: 4px;
+        } {% endcomment %}
+        {% comment %} a {
+            color: rgb(70, 100, 0);
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 24px;
+            width: 150px;
+        } {% endcomment %}
+        {% comment %} img {
+            overflow-clip-margin: content-box;
+            overflow: clip;
+        }
+        a:-webkit-any-link {
+            color: -webkit-link;
+            cursor: pointer;
+        } {% endcomment %}
+        h1 {
+            color: white;
+            text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+        }
+        div {
+            box-shadow: 10px 10px 5px 12px lightblue;
+        }
+
+
+    </style>
+
+
+
+    <nav>
+        <ul>
+            {% comment %} <li>
+                <div class="logo">
+                    <img src="{% static '101 logo.png' %}"  alt="IND AS 101" href="INDAS101.pdf">
+                </div></li> {% endcomment %}
+                <a href="{% static 'INDAS101.pdf' %}" target=”_blank” ><img src="{% static 'pdf.jpg'%}" alt="OPEN PDF" style="width:42px;height:42px;"></a>
+            <li><a href="#objective">Objective</a></li>
+            <li><a href="#scope">Scope</a></li>
+            <li><a href="#Recognitionandmeasurement">Recognition & measurement</a></li>
+        </ul>
+    </nav>
+    <div>
+        <h1>IND AS 101</h1>
+    </div>
+    <section id="objective">
+        <h2>Objective</h2>
+        <hr>
+        The objective of this Ind AS is to ensure that an entity’s first Ind AS financial statements, and its interim
+        financial reports for part of the period covered by those financial statements, contain high quality information
+        that:
+        <ol type="a">
+            <li>(a) is transparent for users and comparable over all periods presented;</li>
+            <li>(b) provides a suitable starting point for accounting in accordance with Indian Accounting Standards
+                (Ind ASs); and</li>
+            <li>(c) can be generated at a cost that does not exceed the benefits.</li>
+        </ol>
+        <hr>
+    </section>
+
+    <section id="scope">
+        <h2>Scope</h2>
+        An entity shall apply this Ind AS in:
+        <ul>
+            <li>(a) its first Ind AS financial statements; and</li>
+            <li>(b) each interim financial report, if any, that it presents in accordance with Ind AS 34, Interim
+                Financial Reporting, for part of the period covered by its first Ind AS financial statements.</li>
+        </ul>
+        <hr>
+        An entity’s first Ind AS financial statements are the first annual financial
+        statements in which the entity adopts Ind ASs, in accordance with Ind ASs
+        notified under the Companies Act, 2013 and <b>makes an explicit and
+            unreserved statement</b> in those financial statements of compliance with Ind
+        ASs.
+        <hr>
+        This Ind AS <b>does not apply to changes in accounting policies made by an
+        entity that already applies Ind ASs</b>. Such changes are the subject of:
+        <ul>
+            <li>(a) requirements on changes in accounting policies in Ind AS 8,
+                Accounting Policies, Changes in Accounting Estimates and Errors;
+                and</li>
+            <li>(b) specific transitional requirements in other Ind ASs.</li>
+            <hr>
+        </ul>
+    </section>
+
+    <section id="Recognitionandmeasurement">
+        <h2>Recognition and measurement</h2>
+        <ul>
+            <p>&ensp;<b>Opening IND AS Balance Sheet</b></p>
+            &emsp;An entity shall prepare and present an opening Ind AS Balance Sheet at the date of transition to Ind ASs. This is the starting point for its accounting in accordance with Ind ASs subject to the requirements of paragraphs D13AA and D22.
+        </ul>
+    </section>
+
+    {% for i in divs %}
+        <h1>{{i}}</h1>
+    {% endfor %}
+    
+{% endblock body %}

@@ -1,0 +1,946 @@
+{% extends "base.html" %}
+
+{% block title %}Ind AS 7{% endblock title %}
+
+{% block body %}
+
+{% load static %}
+
+<style>
+  body{
+    margin: 5px;
+    padding: 5px;
+  }
+  .font-white-hover:hover{
+    box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+    background: linear-gradient(to right, #309dbe , blue,red) ;
+    background-color: blue;
+    color: white;
+    transition-delay: 0.1s;
+  }
+  /* loading animation in illustration - loading.io*/
+  @keyframes ldio-rpinwye8j0b {
+  0% { transform: rotate(0deg) }
+  50% { transform: rotate(180deg) }
+  100% { transform: rotate(360deg) }
+}
+.ldio-rpinwye8j0b div {
+  position: absolute;
+  animation: ldio-rpinwye8j0b 1s linear infinite;
+  width: 12px;
+  height: 12px;
+  top: 3px;
+  left: 3px;
+  border-radius: 50%;
+  box-shadow: 0 4px 0 0 #e15b64;
+  transform-origin: 8px 8.2px;
+}
+.loadingio-eclipse {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  overflow: hidden;
+}
+.ldio-rpinwye8j0b {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform: translateZ(0) scale(1);
+  backface-visibility: hidden;
+  transform-origin: 0 0; /* see note above */
+}
+.ldio-rpinwye8j0b div { box-sizing: content-box; }
+</style>
+
+<h1>7: Cash Flow Statement: 
+  <a href="{% static 'IND AS 7 ICAI.pdf' %}" target="_blank" class="font-white-hover">ICAI</a>
+  <a href="{% static 'INDAS7 mca.pdf' %}" target="_blank" class="font-white-hover"> MCA</a>
+</h1>
+
+<div class="objective">
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                {% comment %} <img src="{% static 'obj1.jpg' %}" alt="obj1" height="30" width="30"> {% endcomment %}
+              </span> INTRODUCTION
+            </button>
+          </nav>
+
+        <div class="collapse" id="navbarToggleExternalContent1">
+          <div class="bg-dark p-4">
+            {% comment %} <h5 class="text-white h4">INTRODUCTION</h5> {% endcomment %}
+            <span class="text-white"><p>The balance sheet is a snapshot of entity’s financial resources and obligations at a particular point 
+                of time and the statement of profit and loss reflects the financial performance for the period. These two components of financial statements are based on accrual basis of accounting. The 
+                statement of cash flows includes only inflows and outflows of cash and cash equivalents; it 
+                excludes transactions that do not affect cash receipts and payments.</p>
+                <p>The information on cash flows is useful in assessing sources of generating and deploying cash and cash equivalents during the reporting period. The statement of cash flows can be used for comparison with earlier reporting periods of the same entity as well as comparison with other entities for the same reporting period.
+                </p>
+                <p>Ind AS 7, Statement of Cash Flows, prescribes principles and guidance on preparation and 
+                    presentation of cash flows of an entity from operating activities, investing activities and financing 
+                    activities for a reporting period.</p>
+            </span>
+          </div>
+        </div>
+      </div>
+</div>
+
+<img src="https://source.unsplash.com/random/900x500/?cash/?sig=1" style="width:100%;" onerror="" src='Default.jpg'">
+<hr>
+
+<table style="width: 80%;">
+    <tr>
+      <th>Particulars</th>
+      <th>Amount</th>
+    </tr>
+    <tr>
+      <td>1. Cash flow from Operating Activities</td>
+      <td><input type="number" id="cashOp" oninput="calculate()" placeholder="Enter amount"></td>
+    </tr>
+    <tr>
+      <td>2. Cash flow used in Investing Activities</td>
+      <td><input type="number" id="cashInv" oninput="calculate()" placeholder="Enter amount"></td>
+    </tr>
+    <tr>
+      <td>3. Cash flow used in Financing Activities</td>
+      <td><input type="number" id="cashFin" oninput="calculate()" placeholder="Enter amount"></td>
+    </tr>
+    <tr>
+      <td>4. Net Cash Generated during the year</td>
+      <td><input type="number" id="cashNet" disabled></td>
+    </tr>
+    <tr>
+      <td>5. Add: Cash and Cash Equivalents at the beginning of the year</td>
+      <td><input type="number" id="cashBegin" oninput="calculate()" placeholder="Enter amount"></td>
+    </tr>
+    <tr>
+      <td>6. Cash and Cash Equivalents at the end of the year</td>
+      <td><input type="number" id="cashEnd" disabled></td>
+    </tr>
+</table>
+(which will also tally with 
+the cash and cash equivalents given in the balance sheet) 
+
+<script>
+function calculate() {
+    const cashOp = parseFloat(document.getElementById("cashOp").value);
+    const cashInv = parseFloat(document.getElementById("cashInv").value);
+    const cashFin = parseFloat(document.getElementById("cashFin").value);
+    const cashBegin = parseFloat(document.getElementById("cashBegin").value);
+
+    const cashNet = cashOp + cashInv + cashFin;
+    const cashEnd = cashNet + cashBegin;
+
+    document.getElementById("cashNet").value = cashNet.toFixed(2);
+    document.getElementById("cashEnd").value = cashEnd.toFixed(2);
+}
+</script>
+  
+  
+
+<hr>
+<div class="container">
+<h5>Liquidity and Risk:</h5>For an investment to qualify as a cash equivalent it must be readily 
+convertible to a known amount of cash and be subject to an insignificant risk of changes in 
+value. Therefore, an investment normally qualifies as a cash equivalent only when it has a 
+short maturity of, say, three months or less from the <b style="background-color: aqua;">date of acquisition</b>.
+</div>
+<hr>
+
+<div>
+    Illustration 2: From the following transactions, identify which transactions will be qualified for the calculation of operating cash flows, if company is into the business of trading of mobile phones.
+    <table style="width: 100%;">
+        <tr style="background-color: #001eff;color: white;">
+            <th style="border: 2px solid red;">Sr. No.</th>
+            <th style="border: 2px solid red;">Nature of Transaction</th>
+            <th style="border: 2px solid red;">Included/Excluded</th>
+            <th style="width: 800px; border: 2px solid red;">Reason</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Receipt from sale of mobile phones</td>
+            <td><input type="checkbox" name="included_excluded" value="included" checked> Included</td>
+            <td><input style="width: 800px;" placeholder="Main revenue generating activity"></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Purchases of mobile phones from various companies</td>
+            <td><input type="checkbox" name="included_excluded" value="included" checked> Included</td>
+            <td><input style="width: 800px;" placeholder="expenses related to main operations of business"></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Employees expenses paid</td>
+            <td><input type="checkbox" name="included_excluded" value="included" checked> Included</td>
+            <td><input style="width: 800px;" placeholder="expenses related to main operations of business"></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Advertisement expenses paid</td>
+            <td><input type="checkbox" name="included_excluded" value="included" checked> Included</td>
+            <td><input style="width: 800px;" placeholder="expenses related to main operations of business"></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Credit sales of mobile</td>
+            <td><input type="checkbox" name="included_excluded" value="included"> Included</td>
+            <td><input style="width: 800px;" placeholder="Credit transaction will not be included in cash flow (receipts from customers will be included)"></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Miscellaneous charges received from customers for repairs of mobiles</td>
+            <td><input type="checkbox" name="included_excluded" value="included" checked> Included</td>
+            <td><input style="width: 800px;" placeholder="supplementary revenue generating activity"></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Loss due to decrease in market value of the closing stock of old mobile phones</td>
+            <td><input type="checkbox" name="included_excluded" value="included"> Included</td>
+            <td><input style="width: 800px;" placeholder="Non cash transaction"></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Payment to suppliers of mobile phones</td>
+            <td><input type="checkbox" name="included_excluded" value="included" checked> Included</td>
+            <td><input style="width: 800px;" placeholder="cash outflow related to main operations of business"></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Depreciation on furniture of sales showrooms</td>
+            <td><input type="checkbox" name="included_excluded" value="included"> Included</td>
+            <td><input style="width: 800px;" placeholder="non cash item"></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td> Interest paid on cash credit facility of the bank</td>
+            <td><input type="checkbox" name="included_excluded" value="included"> Included</td>
+            <td><input style="width: 800px;" placeholder="cost of finance"></td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td> Profit on sale of old computers and printers, in exchange of new laptop and printer</td>
+            <td><input type="checkbox" name="included_excluded" value="included"> Included</td>
+            <td><input style="width: 800px;" placeholder="non cash item"></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td> Advance received from customers</td>
+            <td><input type="checkbox" name="included_excluded" value="included" checked> Included</td>
+            <td><input style="width: 800px;" placeholder="Related to operations of business"></td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Sales Tax and excise duty paid</td>
+            <td><input type="checkbox" name="included_excluded" value="included" checked> Included</td>
+            <td><input style="width: 800px;" placeholder="Related to operations of business"></td>
+        </tr>
+    </table>
+</div>
+<hr>
+
+<div class="container">
+  <p>Certain Specific Issues</p>
+  1. Profit/ Loss on Sale of Assets : cash flows from investing activities <br>
+  2. Properties built for let out : cash flows from operating 
+  activities
+</div>
+<hr>
+
+<div>
+  <b>Investing Activities</b>
+  <table style="border: 2px solid black; background-color: aliceblue;">
+    <tr style="border: 2px solid black; background-color: aquamarine;">
+      <th>Cash Inflow from Investing Activities</th>
+      <th>Cash Outflow from Investing Activities</th>
+    </tr>
+    <tr style="border: 2px solid black;">
+      <td>
+        sales of property, plant and equipment, intangibles and other longterm assets
+      </td>
+      <td>
+        acquire property, plant and 
+        equipment, intangibles and other long-term 
+        assets. These payments include those 
+        relating to capitalised development costs and 
+        self-constructed property, plant and 
+        equipment
+      </td>
+    </tr>
+    <tr style="border: 2px solid black;">
+      <td>
+        sales of equity or debt 
+        instruments of other entities and interests in 
+        joint ventures (other than receipts for those 
+        instruments considered to be cash 
+        equivalents and those held for dealing or 
+        trading purposes)
+      </td>
+      <td>
+        Cash payments to acquire equity or debt 
+        instruments of other entities and interests in 
+        joint ventures (other than payments for those 
+        instruments considered to be cash 
+        equivalents or those held for dealing or 
+        trading purposes)
+      </td>
+    </tr style="border: 2px solid black;">
+    <tr style="border: 2px solid black;">
+      <td>
+        Cash receipts from the repayment of 
+        advances and loans made to other parties 
+        (other than advances and loans of a financial 
+        institution)
+      </td>
+      <td>
+        Cash advances and loans made to other 
+        parties (other than advances and loans made 
+        by a financial institution)
+      </td>
+    </tr>
+    <tr style="border: 2px solid black;">
+      <td>
+        Cash payments for futures contracts, forward 
+        contracts, option contracts and swap 
+        contracts except when the contracts are held 
+        for dealing or trading purposes, or the 
+        payments are classified as financing activities
+      </td>
+      <td>
+        Cash payments for futures contracts, forward 
+        contracts, option contracts and swap 
+        contracts except when the contracts are held 
+        for dealing or trading purposes, or the 
+        payments are classified as financing activities
+      </td>
+    </tr>
+  </table>
+</div>
+
+<br>
+<br>
+<div>
+  Illustration 3 : From the following transactions taken from a private sector bank operating in India, identify 
+  which transactions will be classified as operating and which would be classified as Investing 
+  activity.
+  <table style="width: 100%;">
+      <tr style="background-color: #001eff;color: white;">
+          <th style="border: 2px solid red;">Sr. No.</th>
+          <th style="border: 2px solid red;">Nature of Transaction</th>
+          <th style="border: 2px solid red;">Operating / Investing / Not to be considered</th>
+          <th style="width: 800px; border: 2px solid red;">Reason</th>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>Interest received on loans</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Operating – Main revenue generating activity"></td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Interest paid on Deposits</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Operating – Main expenses of operations"></td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Deposits accepted</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Operating – in case of financial institutes"></td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Loans given to customers</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Operating – in case of financial institutes"></td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Loans repaid by the customers</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Operating – in case of financial institutes"></td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Deposits repaid</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Operating – in case of financial institutes"></td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>Commission received</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+           </td>
+          <td><input style="width: 800px;" placeholder="Operating – Main revenue generating activity"></td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>Lease rentals paid for various branches</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Operating – Main expenses of operations"></td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>Service tax paid</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Operating – Main expenses of operations"></td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td> Furniture purchased for new branches</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing – Assets purchased"></td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td> Implementation of upgraded banking software</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+         </td>
+          <td><input style="width: 800px;" placeholder="Investing – Purchased for long term purpose"></td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td> Purchase of shares in 100% subsidiary for opening a branch in Abu Dhabi </td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing – strategic investment"></td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>New cars purchased from Honda dealer, in exchange of old cars and remaining 
+            amount paid in cash</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing-for cash payment"></td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>Provident fund paid for the employees</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Operating"></td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>Issued employee stock options</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder=" Not to be considered. No cash flow"></td>
+      </tr>
+  </table>
+</div>
+<hr>
+<br>
+
+<div>
+  <b>Financing Activities</b><br>
+  <table style="border: 2px solid black; background-color: aliceblue;">
+    <tr style="border: 2px solid black; background-color: aquamarine;">
+      <th>Cash Inflows from Financing Activity</th>
+      <th>Cash Outflows from Financing Activity</th>
+    </tr>
+    <tr style="border: 2px solid black;">
+      <td>
+        Cash proceeds from issuing shares or other 
+        equity instruments
+      </td>
+      <td>
+        Cash payments to owners to acquire or redeem 
+        the entity’s shares
+      </td>
+    </tr>
+    <tr style="border: 2px solid black;">
+      <td>
+        Cash proceeds from issuing debentures, loans, 
+        notes, bonds, mortgages and other
+      </td>
+      <td>
+        Cash repayments of amounts borrowed; and
+      </td>
+    </tr style="border: 2px solid black;">
+    <tr style="border: 2px solid black;">
+      <td>
+        Short-term or long-term borrowings
+      </td>
+      <td>
+        Cash payments by a lessee for the reduction of the outstanding liability relating to a lease.
+      </td>
+    </tr>
+  </table>
+</div>
+
+<div>
+  <br>
+  Illustration 4 : From the following transactions taken from a parent company having multiple businesses and 
+  multiple segments, identify which transactions will be classified as Operating, Investing and 
+  Financing:
+  <br>
+  <table style="width: 100%;">
+      <tr style="background-color: gray;color: white;">
+          <th style="border: 2px solid red;">Sr. No.</th>
+          <th style="border: 2px solid red;">Nature of Transaction</th>
+          <th style="border: 2px solid red;">Operating / Investing / Not to be considered</th>
+          <th style="width: 800px; border: 2px solid red;">Reason</th>
+      </tr>
+      <tr>
+          <td>1</td>
+          <td>Issued preference shares</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Financing"></td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Purchased the shares of 100% subsidiary company</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing"></td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>Dividend received from shares of subsidiaries</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing"></td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>Dividend received from other companies</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing"></td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>Bonus shares issued</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Investing">Financing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="No cash flow"></td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>Purchased license for manufacturing of special drugs</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing"></td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td> Royalty received from the goods patented by the company</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Investing">Financing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+           </td>
+          <td><input style="width: 800px;" placeholder="Operating"></td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>Rent received from the let out building (letting out is not main business)</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing"></td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td> Interest received from loans and advances given</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Investing">Financing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing"></td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td> Dividend paid</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Investing">Financing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Financing"></td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td> Interest paid on security deposits</td>
+          <td>
+            <select>
+              <option value="Operating">Operating</option>
+              <option value="Investing">Investing</option>
+              <option value="Investing">Financing</option>
+              <option value="Not to be considered">Not to be considered</option>
+            </select>
+         </td>
+          <td><input style="width: 800px;" placeholder="Financing"></td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td> Purchased goodwill </td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing"></td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>Acquired the assets of a company by issue of equity shares (not parting any cash)</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Not to be considered"></td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>Interim dividends paid</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Financing"></td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>Dissolved the 100% subsidiary and received the amount in final settlement</td>
+          <td>
+              <select>
+                <option value="Operating">Operating</option>
+                <option value="Investing">Investing</option>
+                <option value="Investing">Financing</option>
+                <option value="Not to be considered">Not to be considered</option>
+              </select>
+          </td>
+          <td><input style="width: 800px;" placeholder="Investing"></td>
+      </tr>
+  </table>
+</div>
+<hr>
+
+<div style="background-color:aliceblue;">
+  <div class="loadingio-eclipse">
+  <div class="ldio-rpinwye8j0b">
+    <div>
+    </div>
+  </div>
+  </div>
+  Illustration 5 : An entity has entered into a factoring arrangement and received money from the factor. 
+  Examine the said transaction and state how should it be presented in the statement of cash 
+  flows
+  <p>Under factoring arrangement, it needs to be assessed whether the arrangement is recourse or 
+  non-recourse.</p>
+  <p style="background-color:white;">Recourse factoring:</p>
+
+  <p>The <b><span style="background: linear-gradient(to right, red 50%, blue 50%); background-clip: text;">cash received</span></b> is classified as a <b><span style="background: linear-gradient(to right, red 50%, blue 50%); background-clip: text;">financing cash inflow</span></b> as the entity continues to recognize the 
+    receivables and the amount received from the factor is indeed a liability, The substance of the 
+    arrangement is financing, as the entity retains substantially all of the risk and rewards of the 
+    factored receivables. 
+    When the <b><span style="background: linear-gradient(to right, red 50%, blue 50%); background-clip: text;">cash is collected by the factor,</span></b> the liability and the receivables are de-recognized. It is 
+    acceptable for this to be disclosed as a <b><span style="background: linear-gradient(to right, red 50%, blue 50%); background-clip: text;">non-cash transaction,</span></b> because the settlement of the 
+    liability and the factored receivables does not result in cash flows. The <b><span style="background: linear-gradient(to right, red 50%, blue 50%); background-clip: text;">net impact</span></b> of these 
+    transactions on the cash flow statement is to present a <b><span style="background: linear-gradient(to right, red 50%, blue 50%); background-clip: text;">cash inflow from financing</span></b>, but there is <b><span style="background: linear-gradient(to right, red 50%, blue 50%); background-clip: text;"></span>no 
+    operating cash flow from</span></b> the original sale to the entity’s customers.</p>
+
+  <p style="background-color:white;">Non-recourse factoring:</p>
+  <p>Where an entity de-recognises the factored receivables and <b><span style="background: linear-gradient(to right, red 50%, blue 50%); background-clip: text;">receives cash from the factor</span></b>, the 
+    <b><span style="background: linear-gradient(to right, red 50%, blue 50%); background-clip: text;">cash receipt is classified as an operating cash inflow</span></b>. This is because the entity has received cash 
+    in exchange for receivables that arose from its operating activities.</p>
+</div>
+
+<br><hr>
+
+<div>
+  <h3>REPORTING CASH FLOWS FROM OPERATING ACTIVITIES</h3>
+  <ul type="circle">
+    <li>Direct Method - Top Down Approach of Presentation</li>
+    <li>In-Direct Method - Bottom Up Approach of Presentation</li>
+  </ul>
+  <p>Illustration 6: Find out the cash from operations by direct method and indirect method from the following information</p>
+  <p style="text-align: center;"><b>Operating statement of ABC Ltd. for the year ended 31.3.20X2</b></p>
+  <table style="border: 2px solid black; background-color: aliceblue; width: 80%;">
+    <tr style="border: 2px solid black; background-color: aquamarine;">
+      <th>Particulars</th>
+      <th>Amount</th>
+    </tr>
+    <tr>
+      <td>Sales</td>
+      <td>500000</td>
+    </tr>
+    <tr>
+      <td>Less: Cost of goods sold</td>
+      <td>350000</td>
+    </tr>
+    <tr>
+      <td>&emsp;&emsp;Administration & Selling Overheads </td>
+      <td>55000</td>
+    </tr>
+    <tr>
+      <td>&emsp;&emsp;Depreciation</td>
+      <td>7000</td>
+    </tr>
+    <tr>
+      <td>&emsp;&emsp;Interest Paid</td>
+      <td>3000</td>
+    </tr>
+    <tr>
+      <td>&emsp;&emsp;Loss on sale of asset</td>
+      <td>2000</td>
+    </tr>
+    <tr>
+      <td>Profit before tax</td>
+      <td>83000</td>
+    </tr>
+    <tr>
+      <td>&emsp;&emsp;Tax</td>
+      <td>-30000</td>
+    </tr>
+    <tr>
+      <td><b>Profit After tax</b></td>
+      <td><b><u>53000</u></b></td>
+    </tr>
+  </table>
+  <br>
+
+  <p style="text-align: center;"><b>Balance sheet as on 31<sup>st</sup> March</b></p>
+  <table style="border: 2px solid black; background-color: aliceblue; width: 80%;">
+    <tr style="border: 2px solid black; background-color: aquamarine;">
+      <th></th>
+      <th>20X2</th>
+      <th>20X1</th>
+    </tr>
+    <tr>
+      <td><b>Assets</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Non-current Assets</td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Property, Plant and Equipment</td>
+      <td>75000</td>
+      <td>65000</td>
+    </tr>
+    <tr>
+      <td>Investment</td>
+      <td>12000</td>
+      <td>10000</td>
+    </tr>
+    <tr>
+      <td><b>Current Assets</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Inventories</td>
+      <td>12000</td>
+      <td>13000</td>
+    </tr>
+    <tr>
+      <td>Trade receivables</td>
+      <td>10000</td>
+      <td>7000</td>
+    </tr>
+    <tr>
+      <td>Cash & Cash Equivalents</td>
+      <td>6000</td>
+      <td>5000</td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td><b><u>115000</u></b></td>
+      <td><b><u>100000</u></b></td>
+    </tr>
+
+    <!-- liabilities -->
+
+    <tr>
+      <td><b>Equity and Liabilities</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Shareholders’ Funds</td>
+      <td>60000</td>
+      <td>50000</td>
+    </tr>
+    <tr>
+      <td>Non-current Liabilities</td>
+      <td>33000</td>
+      <td>35000</td>
+    </tr>
+    <tr>
+      <td><b>Current Liabilities</b></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Trade Payables</td>
+      <td>12000</td>
+      <td>8000</td>
+    </tr>
+    <tr>
+      <td>Payables for Expenses</td>
+      <td>10000</td>
+      <td>7000</td>
+    </tr>
+    <tr>
+      <td><b>Total</b></td>
+      <td><b><u>115000</u></b></td>
+      <td><b><u>100000</u></b></td>
+    </tr>
+  </table>
+
+</div>
+
+
+{% endblock body %}

@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %} IND AS 19 {% endblock title %}
+
+{% block body %}
+
+
+<style>
+    body{
+        margin:2px;
+        padding:2px;
+    }
+
+</style>
+    <a href="{% static "INDAS19.pdf" %}" target="_blank">Open PDF</a>
+    <h1>Objective of Ind AS 19 (Employee Benefits):</h1>
+    <p>To provide <u>Accounting & Disclosure for employee Benefits</u></p>
+    <p>Recongise:</p>
+    <ui>
+        <li> <u>a liability</u> when an employee has provided service in exchange for employee benefits to be paid
+            in the future; and</li>
+        <li><u>an expense</u> when the entity consumes the economic benefit arising from service provided by an
+            employee in exchange for employee benefits.</li>
+    </ui>
+    <hr>
+    <h1>Scope:</h1>
+    <ul>
+        <li><b>This Standard shall be applied by an employer in accounting for <u>all employee benefits</u>, <u>except
+            those to which Ind AS 102 </u>, Share-based Payment, applies.</b></li>
+        <li>This Standard <U>does not deal with reporting by employee benefit plans.</U></li>
+        <li>The employee benefits to which this Standard applies <u>include</u> those provided:
+            <ol type="a">
+                <li title="applies: Formal plan/Agreement"> under formal plans or other formal agreements between an entity and individual employees,groups of employees or their representatives; (i)</li>
+                <li title="applies: legislative requirements/industry agreements">under legislative requirements, or through industry arrangements, whereby entities are required to contribute to national, state, industry or other multi-employer plans; or (i)</li>
+                <li> by those informal practices that give rise to a constructive obligation. <p>Informal practices give
+                    rise to a constructive obligation where the entity has no realistic alternative but to pay employee
+                    benefits.</p> An example of a constructive obligation is where a change in the entity’s informal
+                    practices would cause unacceptable damage to its relationship with employees.</li>
+            </ol>
+        </li>
+        <li>Employee Benefits include-
+            <ol type="a">
+                <li>short-term employee benefits, such as the following, if expected to be settled wholly before
+                    twelve months after the end of the annual reporting period in which the employees render the
+                    related services:</li>
+                    <ol type="i">
+                        <li>
+                            <label for="wages">wages, salaries and social security contributions;</label>
+                            <input type="text" name="wages">
+                        </li>
+                        <li>
+                            <label for="Leave">paid annual leave and paid sick leave;</label>
+                            <input type="text" name="Leave">
+                        </li>
+                        <li>
+                            <label for="bonus">profit-sharing and bonuses; and</label>
+                            <input type="text" name="bonus" >
+                        </li>
+                        <li>
+                            <label for="non-monetary"> non-monetary benefits (such as medical care, housing, cars and free or subsidised goods
+                                or services) for current employees;
+                            </label>
+                            <input type="text" name="non-monetary">
+                        </li>
+                    </ol>
+                    <hr>
+                <li>post-employment benefits:</li>
+                    <ol type="i">
+                        <li>
+                            <label for="retirement">retirement benefits (eg pensions and lump sum payments on retirement); and</label>
+                            <input type="text" name="retirement">
+                        </li>
+                        <li>
+                            <label for="post-employment">other post-employment benefits, such as post-employment life insurance and post-employment medical care;</label>
+                            <input type="text" name="post-employment">
+                        </li>
+                        <hr>
+                    </ol>
+                <li title="long-term">other long-term employee benefits, such as the following:</li>
+                    <ol type="i">
+                        <li>
+                            <label for="Paid-absences">long-term paid absences such as long-service leave or sabbatical leave;</label>
+                            <input type="text" name="Paid-absences">
+                        </li>
+                        <li>
+                            <label for="jubilee">jubilee or other long-service benefits; and</label>
+                            <input type="text" name="jubilee">
+                        </li>
+                        <li>
+                            <label for="disability">long-term disability benefits; and</label>
+                            <input type="text" name="disability">
+                        </li>
+                    </ol>
+                    <hr>
+                <li>
+                    <label for="termination">termination benefits</label>
+                    <input type="text" name="termination">
+                </li>
+            </ol>
+        </li>
+        <li><b>Definitions</b></li>
+            <ul type="square">
+                <li>Employee benefits: Employee benefits are all forms of consideration given by an entity in exchange for service
+                    rendered by employees or for the termination of employment.</li>
+                <li>Short-term employee benefits: Short-term employee benefits are employee benefits (other than termination benefits) that are expected to be settled wholly before twelve months after the end of the annual reporting period in which the employees render the related service.</li>
+            </ul>
+        <li></li>
+    </ul>
+
+
+{% endblock body %}

@@ -1,0 +1,18 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question-Answer Game</title>
+</head>
+<body>
+    <h1>Question-Answer Game</h1>
+    <div id="question"></div>
+    <input type="text" id="answer" placeholder="Your answer">
+    <button id="submit">Submit</button>
+    <div id="score"></div>
+
+    <script src="{% static 'game/game.js' %}"></script>
+</body>
+</html>

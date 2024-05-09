@@ -1,0 +1,551 @@
+{% extends "base.html" %}
+
+{% block title %}Ind AS 102{% endblock title %}
+
+{% block body %}
+
+{% load static %}
+
+<style>
+  .font-white-hover:hover{
+    box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+    background-color: blue;
+    color: white;
+    transition-delay: 0.1s;
+  }
+</style>
+
+<h1>102: Share Based Payment: 
+  <a href="{% static 'ind as 102 share based payment-unlocked.pdf' %}" target="_blank" class="font-white-hover">ICAI</a>
+  <a href="{% static 'INDAS102 mca.pdf' %}" target="_blank" class="font-white-hover"> MCA</a>
+  <a href="{% static '102 GN.pdf' %}" target="_blank" class="font-white-hover"> SEBI-GN</a>
+</h1>
+
+
+<div class="definition">
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent0" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                <img src="{% static 'defi2.jpg' %}" alt="Defi Logo" width="30" height="30">
+              </span> Definition
+            </button>
+          </nav>
+        <div class="collapse" id="navbarToggleExternalContent0">
+          <div class="bg-dark p-4">
+            <h5 class="text-black bg-light h4">Cash-setteled share based payment Transaction</h5>
+            <span class="text-white">
+                A share-based payment transaction in which <br>
+                <img src="{% static 'building.png' %}" height="30"></img> the entity acquires goods or services <img src="{% static 'cook.png' %}" height="30"></img> by incurring a liability <br>
+                <img src="{% static 'cash.jpg' %}" height="30"> to transfer cash or other assets to the supplier of those goods or services <img src="{% static 'cook.png' %}" height="30"></img> <br>
+                for amount that are based on the price (or value) of equity instruments (including share or share options) of the entity or another group entity.
+            </span>
+
+            <h5 class="text-black bg-light h4 mt-4">Employees and others providing similar services</h5>
+            <span class="text-white">
+                <img src="{% static 'person.png' %}" height="30"></img> Individuals who render <u>personal services</u> to the entity <img src="{% static 'building.png' %}" height="30"></img> and either <br>
+                (a) the <u>Individuals</u> are regarded <u>as employees</u> <u>for legal or tax purposes</u>, <br>
+                (b) the individuals work for the entity under its ditrection in the same way as individuals who are regarded as employees for legal or tax purposes, or <br>
+                (c) the services rendered are similar to those rendered by employees. <br>
+                &emsp;for example, the term emcompasses all management personnels, i.e. those people having authority and resposibility for planning, directing and controlling the activities of the entity, including non-executive directors.
+            </span>
+
+            <h5 class="text-black bg-light h4 mt-4">Equity instrument</h5>
+            <span class="text-white">
+                A contract that evidences a residual interest in the assets of an entity after deducting all of its liabilities.
+            </span>
+
+            <h5 class="text-black bg-light h4 mt-4">Equity instrument granted</h5>
+            <span class="text-white">
+                The right (conditional or unconditional) to an equity instrument of an entity <br>
+                confired by the entity on another party, under a share-based payment agreement.
+            </span>
+
+            <h5 class="text-black bg-light h4 mt-4">Equity settled share-based payment transaction</h5>
+            <span class="text-white">
+                A share-based payment transaction in which the entity <br>
+                (a) receives goods or services as consideration for its own equity instruments (including share or share options), or <br>
+                (b) receives goods or services but has no obligation to settle the transaction with the supplier.
+            </span>
+
+            <h5 class="text-black bg-light h4 mt-4">Fair Value</h5>
+            <span class="text-white">
+                The amount for which an asset could be exchanged, a liability settled, or an equity instrument granted could be exchanged, between knowledgeable, willing parties in an arm's length transaction.
+            </span>
+
+            <h5 class="text-black bg-light h4 mt-4">Grant Date</h5>
+            <span class="text-white">
+                The date at which the entity and another party (including an employee) agree to a <b>share-based payment arrangement</b>,being when the entity and the counterparty have a shared understanding of the terms and conditions of the arrangement. <br>
+                At grant date the entity confers on the counterparty the right to cash, other assets, or equity instruments of the entity, provided the specified vesting conditions, if any, are met. If that agreement is subject to an approval process (for example, by shareholders), grant date is the date when that approval is obtained.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">Intrinsic value</h5>
+              <span class="text-white">
+                The difference between the fair value of the shares to which the counterparty has the (conditional or unconditional) right to subscribe or which it has the right to receive, and the price (if any) the counterparty is (or will be) required to pay for those shares. <br> For example, a share option with an exercise price of Rs. 15, on a share with a fair value of Rs. 20, has an intrinsic value of Rs. 5
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">Market Condition</h5>
+              <span class="text-white">
+                A performance condition upon which the exercise 
+price, vesting or exercisability of an equity 
+instrument depends that is related to the market 
+price (or value) of the entity’s equity instruments
+(or the equity instruments of another entity in the 
+same group), such as: <br>
+(a) attaining a specified share price or a 
+specified amount of intrinsic value of a 
+share option; or <br>
+(b) achieving a specified target that is based on 
+the market price (or value) of the entity’s 
+equity instruments (or the equity 
+instruments of another entity in the same 
+group) relative to an index of market prices 
+of equity instruments of other entities.
+A market condition requires the counterparty to 
+complete a specified period of service (ie a service 
+condition); the service requirement can be explicit 
+or implicit.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">Measurement Date</h5>
+              <span class="text-white">
+                The date at which the fair value of the equity 
+instruments granted is measured for the purposes 
+of this Ind AS. For transactions with employees and 
+others providing similar services, the measurement 
+date is grant date. For transactions with parties 
+other than employees (and those providing similar
+services), the measurement date is the date the entity 
+obtains the goods or the counterparty renders 
+service.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">Performance Condition</h5>
+              <span class="text-white">
+                A vesting condition that requires: <br>
+                (a) the counterparty to complete a specified 
+                period of service (ie a service condition); the 
+                service requirement can be explicit or 
+                implicit; and <br>
+                (b) specified performance target(s) to be met 
+                while the counterparty is rendering the 
+                service required in (a). <br>
+                The period of achieving the performance target(s): <br>
+                (a) shall not extend beyond the end of the 
+                service period; and <br>
+                (b) may start before the service period on the 
+                condition that the commencement date of the 
+                performance target is not substantially before 
+                the commencement of the service period. <br>
+                A performance target is defined by reference to: <br>
+                (a) the entity’s own operations (or activities) or 
+                the operations or activities of another entity 
+                in the same group (ie a non-market 
+                condition); or <br>
+                (b) the price (or value) of the entity’s equity 
+                instruments or the equity instruments of 
+                another entity in the same group (including 
+                shares and share options) (ie a market 
+                condition). <br>
+                A performance target might relate either to the 
+                performance of the entity as a whole or to some part 
+                of the entity (or part of the group), such as a division 
+                or an individual employee.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">Reload Feature</h5>
+              <span class="text-white">
+                A feature that provides for an automatic grant of 
+additional <b>share options</b> whenever the option holder 
+exercises previously granted options using the 
+entity’s shares, rather than cash, to satisfy the 
+exercise price.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">Reload Option</h5>
+              <span class="text-white">
+                A new share option granted when a share is used to satisfy the exercise price of a previous share option.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">Service Condition</h5>
+              <span class="text-white">
+                A <b>vesting condition</b> that requires the counterparty to 
+complete a specified period of service during which 
+services are provided to the entity. If the 
+counterparty, regardless of the reason, ceases to 
+provide service during the <b>vesting period</b>, it has 
+failed to satisfy the condition. A service condition 
+does not require a performance target to be met.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">Share-based Payment Arrangement</h5>
+              <span class="text-white">
+                An agreement between the entity (or another group entity or any shareholder of any group entity) and 
+another party (including an employee) that entitles 
+the other party to receive <br>
+(a) cash or other assets of the entity for amounts 
+that are based on the price (or value) of equity 
+instruments (including shares or share 
+options) of the entity or another group entity, 
+or <br>
+(b) equity instruments (including shares or 
+share options) of the entity or another group 
+entity, <br>
+provided the specified vesting conditions, if any,
+are met.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">share-based payment transaction</h5>
+              <span class="text-white">
+                A transaction in which the entity <br>
+                (a) receives goods or services from the supplier of those goods or services (including an employee) in a share-based payment arrangement, or <br>
+                (b) incurs an obligation to settle the transaction 
+                with the supplier in a share-based payment 
+                arrangement when another group entity 
+                receives those goods or services.
+                <hr>
+                <b>Analysis of share-based payment (SBP)</b>
+                <hr>
+                1. Share-based payment should be formed with an <b><u>agreement</u></b> between an entity & a party (includes employees) which essentially means that a <u>communication of the terms and conditions</u> should be in place in order to have share-based payment.
+                <div class="mybox">Example 1 <br>
+                  A management committee of an entity has initiated a plan to provide some stock options to 
+                  its employees but there are some terms which are yet to be finalized and the plan is not yet 
+                  communicated to the employee. Since, there is no formal communication stating the terms 
+                  or conditions of the agreement, it will not attract Ind AS 102 provisions. The standard will 
+                  be attracted when there will be a binding arrangement.</div>
+                  2. Share-based payments should be made for goods/ services and should be with an external 
+                  person e.g. supplier including employee.
+                <div class="mybox">
+                  Examples 2 & 3 <br>
+                  2. Goods/services have been received by an entity for which it has issued its own equity shares to the counterparty (who has supplied the goods) at discount/ premium. The value of the goods received has been paid by using its own equity shares but if the fair value of the goods received are more / less than the value of share issued by an entity, then <u>some un-identified goods / services</u> will be received / or have been received. Hence, Ind AS 102 will still be applicable for such unidentified goods/ services. <br> 
+                  3. An entity issuing its own shares to a charity without any consideration will be covered under Ind AS 102. This is a share-based payment arrangement, covered under Ind AS 102 (not a share-based payment transaction).
+                </div>
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">share option</h5>
+              <span class="text-white">
+                A contract that gives the holder the right, but not the 
+obligation, to subscribe to the entity’s shares at a 
+fixed or determinable price for a specified period of 
+time.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">vest</h5>
+              <span class="text-white">
+                To become an entitlement. Under a share-based 
+payment arrangement, a counterparty’s right to 
+receive cash, other assets or equity instruments of 
+the entity vests when the counterparty’s entitlement 
+is no longer conditional on the satisfaction of any 
+vesting conditions
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">vesting condition</h5>
+              <span class="text-white">
+                A condition that determine whether the entity 
+receives the services that entitle the counterparty to 
+receive cash, other assets or equity instruments of 
+the entity, under a share-based payment 
+arrangement. A vesting condition is either a 
+service condition or a performance condition. 
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">vesting period</h5>
+              <span class="text-white">
+                The period during which all the specified vesting 
+conditions of a share-based payment 
+arrangement are to be satisfied.
+            </span>
+
+              <h5 class="text-black bg-light h4 mt-4">term</h5>
+              <span class="text-white">
+                define
+            </span>
+
+          </div>
+        </div>
+        
+      </div>
+</div>
+
+
+<div class="objective">
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent1" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                <img src="{% static 'obj1.jpg' %}" alt="obj1" height="30" width="30">
+              </span> Objective
+            </button>
+          </nav>
+        <div class="collapse" id="navbarToggleExternalContent1">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Ind AS 102: Objective</h5>
+            <span class="text-white">The objective of this Standard is to specify the financial reporting by an
+                entity when it undertakes a share-based payment transaction. In particular,
+                it requires an entity to reflect in its profit or loss and financial position the
+                effects of share-based payment transactions, including expenses associated
+                with transactions in which share options are granted to employees.</span>
+          </div>
+        </div>
+        
+      </div>
+</div>
+
+
+<div class="scope">
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent2" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                
+                <img src="{% static 'scope.png' %}" alt="Scope"  width="30" height="30"></span> Scope
+            </button>
+          </nav>
+        <div class="collapse" id="navbarToggleExternalContent2">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4"> Scope</h5>
+            <span class="text-white">
+                <ol type="1" start="2">
+                    <li>
+                        An entity shall apply this Standard in accounting for all share-based
+                        payment transactions, whether or not the entity can identify specifically
+                        some or all of the goods or services received, including:
+                        <br>
+                        (a) equity-settled share-based payment transactions,<br>
+                        (b) cash-settled share-based payment transactions, and<br>
+                        (c) transactions in which the entity receives or acquires goods or services
+                        and the terms of the arrangement provide either the entity or the supplier
+                        of those goods or services with a choice of whether the entity
+                        settles the transaction in cash (or other assets) or by issuing equity
+                        instruments,
+                        <br>
+                        except as noted in paragraphs 3A–6. In the absence of specifically
+                        identifiable goods or services, other circumstances may indicate that goods
+                        or services have been (or will be) received, in which case this Standard
+                        applies.
+                    </li>
+                    <li>
+                        [Refer Appendix 1] <br>
+                        3A A share-based payment transaction may be settled by another group entity
+                        (or a shareholder of any group entity) on behalf of the entity receiving or
+                        acquiring the goods or services. Paragraph 2 also applies to an entity that <br>
+                        (a) receives goods or services when another entity in the same group
+                        (or a shareholder of any group entity) has the obligation to settle the
+                        share-based payment transaction, or <br>
+                        (b) has an obligation to settle a share-based payment transaction when
+                        another entity in the same group receives the goods or services <br>
+                        unless the transaction is clearly for a purpose other than payment for goods
+                        or services supplied to the entity receiving them. 
+                    </li>
+                    <li>
+                        For the purposes of this Standard, a transaction with an employee (or other
+party) in his/her capacity as a holder of equity instruments of the entity is
+not a share-based payment transaction. For example, if an entity grants all
+holders of a particular class of its equity instruments the right to acquire
+additional equity instruments of the entity at a price that is less than the fair
+value of those equity instruments, and an employee receives such a right
+because he/she is a holder of equity instruments of that particular class, the
+granting or exercise of that right is not subject to the requirements of this
+Standard.
+                    </li>
+                    <li>
+                        As noted in paragraph 2, this Standard applies to share-based payment
+transactions in which an entity acquires or receives goods or services.
+Goods includes inventories, consumables, property, plant and equipment,
+intangible assets and other non-financial assets. However, an entity shall
+not apply this Standard to transactions in which the entity acquires goods as
+part of the net assets acquired in a business combination as defined by Ind
+AS 103, Business Combinations, in a combination of entities or businesses
+under common control as described in Appendix C of Ind AS 103, or the
+contribution of a business on the formation of a joint venture as defined by
+Ind AS 111, Joint Arrangements. Hence, equity instruments issued in a
+business combination in exchange for control of the acquiree are not within
+the scope of this Standard. However, equity instruments granted to
+employees of the acquiree in their capacity as employees (eg in return for
+continued service) are within the scope of this Standard. Similarly, the
+cancellation, replacement or other modification of share-based payment
+arrangements because of a business combination or other equity
+restructuring shall be accounted for in accordance with this Standard. Ind
+AS 103 provides guidance on determining whether equity instruments
+issued in a business combination are part of the consideration transferred in
+exchange for control of the acquiree (and therefore within the scope of Ind
+AS 103) or are in return for continued service to be recognised in the postcombination
+period (and therefore within the scope of this Standard).
+                    </li>
+                    <li>
+                        This Standard does not apply to share-based payment transactions in which
+the entity receives or acquires goods or services under a contract within the
+scope of paragraphs 8–10 of Ind AS 32, Financial Instruments:
+Presentation, or paragraphs 2.4–2.7 of Ind AS 109, Financial
+Instruments. <br>
+6A This Standard uses the term ‘fair value’ in a way that differs in some
+respects from the definition of fair value in Ind AS 113, Fair Value
+Measurement. Therefore, when applying Ind AS 102 an entity measures fair
+value in accordance with this Standard, not Ind AS 113.
+                    </li>
+                    
+
+                </ol>
+            </span>
+          </div>
+        </div>
+        
+      </div>
+</div>
+
+<div class="recoginition">
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"><img src="{% static 'reco1.jpg' %}" alt="reco1.jpg" height="30" width="30"></span> Recognition
+            </button>
+          </nav>
+        <div class="collapse" id="navbarToggleExternalContent3">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Recognition</h5>
+            <span class="text-white">
+                <ol type="1" start="7">
+                    <li>
+                        <b>An entity shall recognise the goods or services received or
+                            acquired in a share-based payment transaction when it obtains the
+                            goods or as the services are received. The entity shall recognise a
+                            corresponding increase in equity if the goods or services were
+                            received in an equity-settled share-based payment transaction, or
+                            a liability if the goods or services were acquired in a cash-settled sharebased
+                            payment transaction.</b>
+                    </li>
+                    <li><b>
+                        When the goods or services received or acquired in a share-based
+payment transaction do not qualify for recognition as assets, they shall
+be recognised as expenses.
+                    </b></li>
+                    <li>
+                        Typically, an expense arises from the consumption of goods or
+services. For example, services are typically consumed immediately, in
+which case an expense is recognised as the counterparty renders
+service. Goods might be consumed over a period of time or, in the case of
+inventories, sold at a later date, in which case an expense is recognised
+when the goods are consumed or sold. However, sometimes it is necessary
+to recognise an expense before the goods or services are consumed or sold,
+because they do not qualify for recognition as assets. For example, an entity
+might acquire goods as part of the research phase of a project to develop a
+new product. Although those goods have not been consumed, they might
+not qualify for recognition as assets under the applicable Ind AS.
+                    </li>
+                </ol>
+            </span>
+          </div>
+        </div>
+        
+      </div>
+</div>
+
+<div class="objective">
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent4" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span> Equity-settled share-based payment transactions
+            </button>
+          </nav>
+        <div class="collapse" id="navbarToggleExternalContent4">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4"><b>Overview</b></h5>
+            <span class="text-light">
+                
+                <ol type="1" start="10">
+                    <li>
+                        <b>For equity-settled share-based payment transactions, the entity shall
+                            measure the goods or services received, and the corresponding increase
+                            in equity, directly, at the fair value of the goods or services received,
+                            unless that fair value cannot be estimated reliably. If the entity cannot
+                            estimate reliably the fair value of the goods or services received, the
+                            entity shall measure their value, and the corresponding increase in
+                            equity, indirectly, by reference to1 the fair value of the equity
+                            instruments granted.</b>
+                    </li>
+                    <li>
+                        To apply the requirements of paragraph 10 to transactions with employees
+                        and others providing similar services,2 the entity shall measure the fair
+                        value of the services received by reference to the fair value of the equity
+                        instruments granted, because typically it is not possible to estimate reliably
+                        the fair value of the services received, as explained in paragraph 12. The fair value of those equity instruments shall be measured at grant date.
+                    </li>
+                </ol>
+            </span>
+          </div>
+        </div>
+        
+      </div>
+</div>
+
+<div class="cash_settled">
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent5" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>Cash-settled share-based payment transactions
+            </button>
+          </nav>
+        <div class="collapse" id="navbarToggleExternalContent5">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Cash-settled share-based payment transactions</h5>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+          </div>
+        </div>
+        
+      </div>
+</div>
+
+<div class="cash_alternatives">
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent6" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>Share-based payment transactions with cash alternatives
+            </button>
+          </nav>
+        <div class="collapse" id="navbarToggleExternalContent6">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Share-based payment transactions with cash alternatives</h5>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+          </div>
+        </div>
+        
+      </div>
+</div>
+
+
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent7" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>Share-based payment transactions among group entities
+            </button>
+          </nav>
+        <div class="collapse" id="navbarToggleExternalContent7">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Share-based payment transactions among group entities</h5>
+            <span class="text-muted">Toggleable via the navbar brand.</span>
+          </div>
+        </div>
+        
+      </div>
+
+
+    <div class="pos-f-t">
+        <nav class="navbar navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent8" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>Disclosures
+            </button>
+          </nav>
+        <div class="collapse" id="navbarToggleExternalContent8">
+          <div class="bg-dark p-4">
+            <h5 class="text-white h4">Disclosures</h5>
+            <span class="text-muted">
+              
+            </span>
+          </div>
+        </div>
+        
+      </div>
+
+
+{% endblock body %}
