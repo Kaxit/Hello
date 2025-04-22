@@ -41,6 +41,8 @@ def Ind_AS_2(request):
     return render(request,"fr/Ind_AS_2.html")
 def Ind_AS_7(request):
     return render(request,"fr/Ind_AS_7.html")
+def Ind_AS_7_pdf(request):
+    return render(request,"static/INDAS7 20mca.pdf")
 def Ind_AS_19(request):
     return render(request,"fr/Ind_AS_19.html")
 def Ind_AS_41(request):
