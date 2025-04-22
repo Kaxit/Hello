@@ -42,7 +42,7 @@ def Ind_AS_2(request):
 def Ind_AS_7(request):
     return render(request,"fr/Ind_AS_7.html")
 def Ind_AS_7_pdf(request):
-    return render(request,"INDAS7 20mca.pdf")
+    return render(request,"INDAS7 mca.pdf")
 def Ind_AS_19(request):
     return render(request,"fr/Ind_AS_19.html")
 def Ind_AS_41(request):
