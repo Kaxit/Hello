@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.http import FileResponse, HttpResponseNotFound, HttpResponseServerError
 from .models import Question
 from django.template import loader
 from django.conf import settings  # Import settings to access STATIC_ROOT or other static paths
