@@ -14,6 +14,7 @@ urlpatterns = [
     path("Ind_AS_102",views.Ind_AS_102), # ,name="home"  -->path name = home
     path("Ind_AS_113",views.Ind_AS_113), # ,name="home"  -->path name = home
     path("Ind_AS_115",views.Ind_AS_115), # ,name="home"  -->path name = home
+    path("static/INDAS7 20mca.pdf",views.Ind_AS_7_pdf),
     path("skreachpad",views.skreachpad,name="skreachpad"), # ,name="skreachpad"  -->path name = home
     path('game', views.game_view, name='game'),
     path('game2', views.game_view2, name='game2'),
