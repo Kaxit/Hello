@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from .models import Question
 from django.template import loader
+from django.conf import settings  # Import settings to access STATIC_ROOT or other static paths
 
 divs=[]
 for i in range(10):
@@ -42,7 +43,22 @@ def Ind_AS_2(request):
 def Ind_AS_7(request):
     return render(request,"fr/Ind_AS_7.html")
 def Ind_AS_7_pdf(request):
-    return render(request,"INDAS7 mca.pdf")
+    try:
+        file_path = os.path.join(settings.BASE_DIR, 'your_app', 'static', 'INDAS7 mca.pdf') # Adjust the path based on your actual file location
+
+        # Alternatively, if you're using STATIC_ROOT and STATIC_URL:
+        # file_path = os.path.join(settings.STATIC_ROOT, 'INDAS7 mca.pdf') # If the PDF is in a globally managed static directory
+
+        pdf_file = open(file_path, 'rb')
+        response = FileResponse(pdf_file, content_type='application/pdf')
+        response['Content-Disposition'] = 'inline; filename="INDAS7 mca.pdf"' # Suggest how the browser should handle the file
+        return response
+    except FileNotFoundError:
+        # Handle the case where the PDF file doesn't exist
+        return HttpResponseNotFound("PDF file not found.")
+    except Exception as e:
+        # Handle other potential errors
+        return HttpResponseServerError(f"Error serving PDF: {e}")
 def Ind_AS_19(request):
     return render(request,"fr/Ind_AS_19.html")
 def Ind_AS_41(request):
