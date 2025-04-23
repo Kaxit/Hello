@@ -37,7 +37,7 @@ def game_view2(request):
 def index(request):
     # return HttpResponse("This is Home Page")
     return render(request,"index.html")
-def Ind_AS_list(ewquest):
+def Ind_AS_list(request):
     return render(request,"ind_as_list.html")
 def Ind_AS_1(request):
     return HttpResponse("This is Ind_AS_1 Page")
