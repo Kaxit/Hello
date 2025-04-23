@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IND AS Standards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .ind-as-list {
+            list-style: none;
+            padding: 0;
+        }
+        .ind-as-item {
+            margin: 10px 0;
+            padding: 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .ind-as-item a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-size: 18px;
+            display: block;
+        }
+        .ind-as-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>IND AS Standards</h1>
+    </div>
+    <ul class="ind-as-list">
+        {% for number, data in ind_as_data.items %}
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' number %}">
+                IND AS {{ number }} - {{ data.title }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html> 
