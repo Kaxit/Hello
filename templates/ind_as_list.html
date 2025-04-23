@@ -1,58 +1,127 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>IND AS Standards</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
-        .header {
-            background-color: #2c3e50;
-            color: white;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-        }
-        .ind-as-list {
-            list-style: none;
-            padding: 0;
-        }
-        .ind-as-item {
-            margin: 10px 0;
-            padding: 15px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .ind-as-item a {
-            text-decoration: none;
-            color: #2c3e50;
-            font-size: 18px;
-            display: block;
-        }
-        .ind-as-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-    </style>
-</head>
-<body>
-    <div class="header">
-        <h1>IND AS Standards</h1>
-    </div>
+{% extends 'base.html' %}
+
+{% block title %}IND AS Standards List{% endblock %}
+
+{% block header %}IND AS Standards{% endblock %}
+
+{% block content %}
     <ul class="ind-as-list">
-        {% for number, data in ind_as_data.items %}
         <li class="ind-as-item">
-            <a href="{% url 'ind_as_detail' number %}">
-                IND AS {{ number }} - {{ data.title }}
-            </a>
+            <a href="{% url 'ind_as_detail' 1 %}">IND AS 1 - Presentation of Financial Statements</a>
         </li>
-        {% endfor %}
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 2 %}">IND AS 2 - Inventories</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 7 %}">IND AS 7 - Statement of Cash Flows</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 8 %}">IND AS 8 - Accounting Policies, Changes in Accounting Estimates and Errors</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 10 %}">IND AS 10 - Events after the Reporting Period</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 12 %}">IND AS 12 - Income Taxes</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 16 %}">IND AS 16 - Property, Plant and Equipment</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 17 %}">IND AS 17 - Leases</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 19 %}">IND AS 19 - Employee Benefits</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 20 %}">IND AS 20 - Accounting for Government Grants and Disclosure of Government Assistance</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 21 %}">IND AS 21 - The Effects of Changes in Foreign Exchange Rates</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 23 %}">IND AS 23 - Borrowing Costs</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 24 %}">IND AS 24 - Related Party Disclosures</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 27 %}">IND AS 27 - Separate Financial Statements</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 28 %}">IND AS 28 - Investments in Associates and Joint Ventures</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 29 %}">IND AS 29 - Financial Reporting in Hyperinflationary Economies</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 32 %}">IND AS 32 - Financial Instruments: Presentation</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 33 %}">IND AS 33 - Earnings per Share</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 34 %}">IND AS 34 - Interim Financial Reporting</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 36 %}">IND AS 36 - Impairment of Assets</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 37 %}">IND AS 37 - Provisions, Contingent Liabilities and Contingent Assets</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 38 %}">IND AS 38 - Intangible Assets</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 40 %}">IND AS 40 - Investment Property</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 41 %}">IND AS 41 - Agriculture</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 101 %}">IND AS 101 - First-time Adoption of Indian Accounting Standards</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 102 %}">IND AS 102 - Share-based Payment</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 103 %}">IND AS 103 - Business Combinations</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 104 %}">IND AS 104 - Insurance Contracts</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 105 %}">IND AS 105 - Non-current Assets Held for Sale and Discontinued Operations</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 106 %}">IND AS 106 - Exploration for and Evaluation of Mineral Resources</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 107 %}">IND AS 107 - Financial Instruments: Disclosures</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 108 %}">IND AS 108 - Operating Segments</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 109 %}">IND AS 109 - Financial Instruments</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 110 %}">IND AS 110 - Consolidated Financial Statements</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 111 %}">IND AS 111 - Joint Arrangements</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 112 %}">IND AS 112 - Disclosure of Interests in Other Entities</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 113 %}">IND AS 113 - Fair Value Measurement</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 114 %}">IND AS 114 - Regulatory Deferral Accounts</a>
+        </li>
+        <li class="ind-as-item">
+            <a href="{% url 'ind_as_detail' 115 %}">IND AS 115 - Revenue from Contracts with Customers</a>
+        </li>
     </ul>
-</body>
-</html> 
+{% endblock %} 
